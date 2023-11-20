@@ -1,0 +1,65 @@
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:23:52.209Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:23:57.078Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:28:25.825Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:48:37.019Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:48:44.184Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:49:10.672Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:52:00.116Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:52:26.716Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:52:42.035Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T13:53:07.368Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T14:00:43.874Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-17T14:12:12.682Z"}
+{"level":"fatal","message":"Error al validar la contraseña","timestamp":"2023-10-17T19:33:27.664Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:33:51.876Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:34:03.976Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:34:57.632Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:35:52.820Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:36:15.367Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:36:44.225Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:37:01.439Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:37:21.093Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:37:46.389Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:38:06.571Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:38:28.370Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:38:56.529Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:39:18.449Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:45:13.684Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:45:36.278Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:45:55.670Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:46:03.658Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:46:36.741Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:46:41.954Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:47:39.720Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:48:12.995Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-17T19:48:30.205Z"}
+{"level":"fatal","message":"Error al obtener el producto","timestamp":"2023-10-18T00:09:19.276Z"}
+{"level":"fatal","message":"Error al obtener el producto","timestamp":"2023-10-18T00:09:48.357Z"}
+{"level":"fatal","message":"Error al loguear el usuario","timestamp":"2023-10-18T00:58:28.561Z"}
+{"level":"fatal","message":"Error al obtener los mensajes","timestamp":"2023-10-18T13:19:47.657Z"}
+{"level":"fatal","message":"Error al loguear el usuario","timestamp":"2023-10-18T14:50:58.874Z"}
+{"level":"fatal","message":"Error al cambiar a usuario premium","timestamp":"2023-10-20T00:12:04.042Z"}
+{"level":"fatal","message":"Error al obtener el ticket","timestamp":"2023-10-20T17:22:50.038Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:42:02.044Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:42:42.166Z"}
+{"level":"fatal","message":"Error al obtener los productos","timestamp":"2023-10-20T18:47:29.954Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:50:51.564Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:50:57.041Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:52:18.194Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:53:00.196Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:53:36.773Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:54:16.313Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:54:40.846Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:55:00.846Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:55:28.064Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:55:42.518Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T18:58:04.161Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T19:03:33.057Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-20T19:04:12.805Z"}
+{"level":"fatal","message":"Error al eliminar el producto","timestamp":"2023-10-21T15:29:40.402Z"}
+{"level":"fatal","message":"Error al eliminar el producto","timestamp":"2023-10-21T15:31:54.080Z"}
+{"level":"fatal","message":"Error al eliminar el producto","timestamp":"2023-10-21T15:32:12.694Z"}
+{"level":"fatal","message":"Error al agregar el producto","timestamp":"2023-10-21T15:46:16.083Z"}
+{"level":"fatal","message":"Error al obtener el carrito","timestamp":"2023-10-21T16:22:54.014Z"}
+{"level":"error","message":"Error","timestamp":"2023-10-22T22:31:19.958Z"}
+{"level":"fatal","message":"Fatal","timestamp":"2023-10-22T22:31:19.960Z"}

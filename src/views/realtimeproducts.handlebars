@@ -1,0 +1,412 @@
+<style>
+  /* Establecer el fondo de los formularios */ .formulario-real,
+  .formulario-delete { background-color: #0097a7;padding: 20px; border-radius:
+  5px;} select { width: 100%; height: 45px;}
+</style>
+
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-primary"
+  style="padding: 10px 20px;"
+>
+  <div class="container-fluid">
+    <a href="/">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="2em"
+        viewBox="0 0 576 512"
+      >
+        <!-- Tu logotipo o icono aquí -->
+      </svg>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 512 512"
+            >
+              <!-- Icono y texto de Menage -->
+            </svg>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./realTimeProducts">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 512 512"
+            >
+              <!-- Icono y texto de Menage -->
+            </svg>
+            <p>Manage</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/api/cart/user">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 576 512"
+            >
+              <!-- Icono y texto de Cart -->
+            </svg>
+            <p>Cart</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/api/products/products">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 512 512"
+            >
+              <!-- Icono y texto de Support -->
+            </svg>
+            <p>Products</p>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="/profile">
+            <div
+              style="display: flex; justify-content:space-evenly;align-items:center;"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="2rem"
+                viewBox="0 0 448 512"
+              >
+                <!-- Icono de perfil -->
+              </svg>
+            </div>
+            <p style="font-size: 2.1rem;color:white;margin-right:10px;">
+              {{first_name}}
+              {{last_name}}
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            href="/api/session/logout"
+            style="margin-left:1rem;color: white;text-decoration:none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 512 512"
+            >
+              <!-- Icono y texto de Logout -->
+            </svg>
+            <p>Logout</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="container mt-3" style="margin: 0 auto;">
+  <div class="row">
+    <div class="col-lg-6" style="margin: 0 auto;">
+      <h2 class="titulo-categoria">Categorias</h2>
+      <form id="form-category">
+        <div class="mb-3">
+          <label for="category" class="form-label">Seleccione una categoría</label>
+          <select
+            id="category"
+            name="category"
+            class="form-select"
+            required
+            style="border: 2px solid black;margin-bottom:20px; border-radius: 10px;"
+          >
+            <option selected disabled>Seleccione una opción</option>
+            {{#each category}}
+              <option value="{{name}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Ordenar por precio</label>
+          <select
+            id="price"
+            name="sort"
+            class="form-select"
+            required
+            style="border: 2px solid black;margin-bottom:20px; border-radius: 10px;"
+          >
+            <option selected disabled>Seleccione una opción</option>
+            <option value="1">Menor Precio</option>
+            <option value="-1">Mayor Precio</option>
+            <option value="0">No ordenar</option>
+          </select>
+        </div>
+        <div class="d-flex flex-column">
+          <button class="btn btn-primary" type="submit">FILTRAR</button>
+          <a class="" href="/" style="width: 100%;">
+            <button
+              class="btn btn-primary"
+              style="width: 100%;margin-top:20px"
+            >Volver</button>
+          </a>
+        </div>
+      </form>
+    </div>
+    <h2 style="text-align: center;margin-top:20px;">TODOS LOS PRODUCTOS</h2>
+  </div>
+</section>
+
+<div class="container" style="margin-top: 20px;">
+  <div class="row" id="cards-product">
+    {{#each products}}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card" style="width: 100%;">
+          <img class="card-img-top" src="{{thumbail}}" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-stock">Stock: {{stock}}</p>
+            <p class="card-price">${{price}}</p>
+            <p class="_id">ID:{{_id}}</p>
+            <a
+              class="btn"
+              style="text-decoration: none;margin-top:2rem;color:white;"
+              href="/api/cart/pid/{{_id}}"
+            >Add to cart</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+{{cid}}
+
+<nav aria-label="Page navigation" style="width:20%;margin: 0 auto;">
+  <ul class="pagination justify-content-center" style="gap: 5px;">
+    {{#if productsPrev}}
+      <li class="page-item">
+        <a
+          class="page-link"
+          href="{{productsPrev}}"
+          aria-label="Anterior"
+          style="height: 40px;width:40px;display:flex;align-items:center;justify-content:center;background-color:#0097a7;
+          font-weight:bold;font-size:1.5rem;"
+        >
+          <span aria-hidden="true" style="color: white;">&laquo;</span>
+        </a>
+      </li>
+    {{/if}}
+    {{#if productsPrevValidate}}
+      <li class="page-item">
+        <a
+          class="page-link"
+          href="{{productsPrev}}"
+          aria-label="Anterior"
+          style="height: 40px;width:40px;display:flex;align-items:center;justify-content:center;background-color:#0097a7;
+          font-weight:bold;font-size:1.5rem;color:white;"
+        >
+          {{productsPrevValidate}}
+        </a>
+      </li>
+    {{/if}}
+    {{#if productsNextValidate}}
+      <li class="page-item">
+        <a
+          class="page-link"
+          href="{{productsNext}}"
+          aria-label="Anterior"
+          style="height: 40px;width:40px;display:flex;align-items:center;justify-content:center;background-color:#0097a7;
+          font-weight:bold;font-size:1.5rem;color:white"
+        >
+          {{productsNextValidate}}
+        </a>
+      </li>
+    {{/if}}
+    <!-- Puedes agregar más elementos de paginación si es necesario -->
+    {{#if productsNext}}
+      <li class="page-item">
+        <a
+          class="page-link"
+          href="{{productsNext}}"
+          aria-label="Siguiente"
+          style="height: 40px;width:40px;display:flex;align-items:center;justify-content:center;background-color:#0097a7;
+          font-weight:bold;font-size:1.5rem;color:white"
+        >
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    {{/if}}
+  </ul>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <!-- Formulario de Crear Productos -->
+    <div class="col-lg-6">
+      <div class="formulario-real mx-auto">
+        <h3 style="text-transform: uppercase">Crear Productos</h3>
+        <form
+          id="formCreate"
+          class="formulario-grid"
+          style="margin-bottom: 20px;"
+        >
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="Ingrese el título aquí"
+              name="title"
+              required
+              style="max-width: 100%;"
+            />
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="descripcion"
+              placeholder="Ingrese la descripción"
+              name="descripcion"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="code">Code:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="code"
+              placeholder="Ingrese el código aquí"
+              name="code"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              placeholder="Ingrese el precio"
+              min="1"
+              name="price"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="status">Status:</label>
+            <select class="form-control" id="status" name="status" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="0">True</option>
+              <option value="1">False</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stock">Stock:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="stock"
+              placeholder="Ingrese el stock aquí"
+              min="0"
+              name="stock"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="category-select">Category:</label>
+            <select class="form-control" name="category" required>
+              <option value="" disabled selected>Select one</option>
+              {{#each category}}
+                <option value="{{this.name}}">{{this.name}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="thumbail">Thumbnail:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="thumbail"
+              placeholder="Ingrese el thumbnail aquí"
+              name="thumbail"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Ingrese el email owner aquí"
+              name="email"
+              required
+            />
+          </div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            id="create"
+            style="margin-top: 20px;"
+          >Crear Producto</button>
+        </form>
+        <p style="text-align: center;margin-top: 10px">Recuerde rellenar todos
+          los campos.</p>
+      </div>
+    </div>
+
+    <!-- Formulario de Eliminar Productos -->
+    <div class="col-lg-6 col-12">
+      <div class="formulario-delete mx-auto mt-3 mt-lg-0">
+        <h3>Eliminar Productos</h3>
+        <form class="form-delete" id="formDelete">
+          <div class="form-group" style="margin-bottom:20px">
+            <label for="id">ID:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              name="id"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Ingrese el email owner aquí"
+              name="email"
+              required
+              style="margin-bottom: 40px;"
+            />
+          </div>
+          <button class="btn btn-danger" type="submit" id="create">Eliminar
+            Producto</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

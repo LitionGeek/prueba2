@@ -1,0 +1,153 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-primary"
+  style="padding: 10px 20px;"
+>
+  <div class="container-fluid">
+    <a href="/">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="2em"
+        viewBox="0 0 576 512"
+      >
+        <!-- Tu logotipo o icono aquí -->
+      </svg>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 512 512"
+            >
+              <!-- Icono y texto de Menage -->
+            </svg>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./realTimeProducts">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 512 512"
+            >
+              <!-- Icono y texto de Menage -->
+            </svg>
+            <p>Manage</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/api/cart/user">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 576 512"
+            >
+              <!-- Icono y texto de Cart -->
+            </svg>
+            <p>Cart</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/api/products/products">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 512 512"
+            >
+              <!-- Icono y texto de Support -->
+            </svg>
+            <p>Products</p>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="/profile">
+            <div
+              style="display: flex; justify-content:space-evenly;align-items:center;"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="2rem"
+                viewBox="0 0 448 512"
+              >
+                <!-- Icono de perfil -->
+              </svg>
+            </div>
+            <p style="font-size: 2.1rem;color:white;margin-right:10px;">
+              {{first_name}}
+              {{last_name}}
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/api/session/logout" style="margin-left:1rem;color:white;">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2rem"
+              viewBox="0 0 512 512"
+            >
+              <!-- Icono y texto de Logout -->
+            </svg>
+            <p>Logout</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h2
+  class="chat"
+  style="font-size: 30px; text-align:center; margin-bottom:2rem;margin-top:2rem;"
+>Bienvido al Chat
+  <b id="username"></b>!</h2>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card chat-caja" style="box-shadow: 0px 0px 10px #969696;">
+        <div>
+          <p class="text-center m-0 historial" style="color: white;"><b>Historial</b></p>
+        </div>
+        <hr style="margin: 2px 0 2px 0;" />
+        <div
+          class="mensajeria"
+          id="logs msj"
+          style="margin: 5px; max-width: 400px; max-height: 200px; overflow-y: scroll;"
+        >
+          {{#each messages}}
+            <p style="color: white;"><b>{{user}}:</b>
+              {{message}}<i
+                style="font-size: x-small; margin-left: 5px;"
+              >{{hour}}</i></p>
+          {{/each}}
+        </div>
+      </div>
+      <div class="escribir mt-3">
+        <b>Escribe algo:</b>
+        <input id="chatbox" class="form-control" />
+      </div>
+    </div>
+  </div>
+</div>
+{{! SweetAlert }}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{! Socket.io }}
+<script src="/socket.io/socket.io.js"></script>
+{{! Logica de Socket.io }}
+<script src="/js/chat.js"></script>
